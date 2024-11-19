@@ -1,0 +1,24 @@
+header.header__home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    
+    img{
+        width: 300px;
+        height: auto;
+        margin: 40px 0;
+    }
+
+    h1{
+        color: var(--grey-900)
+    }
+
+    p{
+        color: var(--grey-500);
+        font-weight: 500;
+        font-size: 18px;
+        padding: 10px 0;
+        text-align: center;
+    }
+}
