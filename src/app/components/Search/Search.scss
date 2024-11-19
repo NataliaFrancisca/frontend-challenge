@@ -1,0 +1,33 @@
+form.search__element{
+    width: 70%;
+    background-color: var(--red-light-color);
+    padding: 22px 34px;
+    border-radius: 50px;
+    align-self: center;
+    justify-self: center;   
+    align-items: center;
+    gap: 40px;
+    display: flex;
+    margin: 30px 0;
+
+    img{
+        height: 28px;
+        width: 28px;
+    }
+
+    input{
+        font-size: 18px;
+        font-weight: 600;
+        background-color: transparent;
+        width: 100%;
+        outline: none;
+
+        &::placeholder{
+            color: rgba(255, 21, 16, .50);
+        }
+    }
+
+    @media screen and (max-width: 576px){
+        width: 90%;
+    }
+}
