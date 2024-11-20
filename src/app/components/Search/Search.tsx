@@ -16,7 +16,7 @@ const Search = () => {
             
             <input 
                 type="text" 
-                placeholder="Procure por hérois" 
+                placeholder="Procure por heróis" 
                 onChange={(e) => setInputSearchValue(e.target.value)}
             />
         </form>
