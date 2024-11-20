@@ -11,5 +11,5 @@ export async function GET(request: NextRequest){
         });
     };
 
-    return await httpRequest(`/characters?name=${characterName}&`);
+    return await httpRequest(`/characters?nameStartsWith=${characterName}&`);
 }
