@@ -1,20 +1,12 @@
 'use client';
 import { createContext, ReactNode, useState } from "react";
-
-type TCharacterBasicInfo = {
-    name: string,
-    id: number,
-    thumbnail: {
-        extension: string,
-        path: string
-    }
-}
+import { TCharacterBasicInfo } from "../ts/types";
 
 interface CharactersContextType {
-    initial: Array<TCharacterBasicInfo>;
-    search: Array<TCharacterBasicInfo> | null;
-    setInitial: (characters: Array<TCharacterBasicInfo>) => void;
-    setSearch: (characters: Array<TCharacterBasicInfo> | null) => void;
+    initial: TCharacterBasicInfo[];
+    search: TCharacterBasicInfo[] | null;
+    setInitial: (characters: TCharacterBasicInfo[]) => void;
+    setSearch: (characters: TCharacterBasicInfo[] | null) => void;
 }
 
 export const CharactersContext = createContext<CharactersContextType>({
@@ -25,8 +17,8 @@ export const CharactersContext = createContext<CharactersContextType>({
 });
 
 export const CharactersProvider = ({children}: {children: ReactNode}) => {
-    const [initial, setInitial] = useState<Array<TCharacterBasicInfo>>([]);
-    const [search, setSearch] = useState<Array<TCharacterBasicInfo> | null>(null);
+    const [initial, setInitial] = useState<TCharacterBasicInfo[]>([]);
+    const [search, setSearch] = useState<TCharacterBasicInfo[] | null>(null);
     
     return(
         <CharactersContext.Provider value={{initial ,search, setInitial, setSearch}}>
