@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Work_Sans } from 'next/font/google'
 
 import "./globals.css";
+import { CharactersProvider } from "./context/CharactersContext";
+import { SearchActionProvider } from "./context/SearchActionContext";
 
 const worksans = Work_Sans({
   subsets: ['latin'],
@@ -21,9 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={worksans.className}>
-        {children}
-      </body>
+      <CharactersProvider>
+        <SearchActionProvider>
+          <body className={worksans.className}>
+            {children}
+          </body>
+        </SearchActionProvider>
+      </CharactersProvider>
     </html>
   );
 }
