@@ -1,25 +1,27 @@
-import { fetchAllCharacters } from "@/app/functions/fetchCharacter";
-
+'use client';
 import "./ViewCharacters.scss";
 
 import Image from "next/image";
-import Loader from "@/app/components/Loader/Loader";
 import Characters from "../Characters/Characters";
+import { useContext } from "react";
+import { CharactersContext } from "@/app/context/CharactersContext";
+import { SearchActionContext } from "@/app/context/SearchActionContext";
+import { TCharacterBasicInfo } from "@/app/ts/types";
 
-const ViewCharacters = async() => {
+const formatNumberCharacters = (size: number) => size > 1 ? `Encontrado ${size} heróis` : "Encontrado 1 herói";
 
-    const response = await fetchAllCharacters();
+const ViewCharacters = (props: {characters: Array<TCharacterBasicInfo>}) => {
 
-    if(!response.results){
-        <main className="characters__element">
-            <Loader />
-        </main>
-    }
-    
+    const { search } = useContext(CharactersContext);
+    const { status } = useContext(SearchActionContext);
+
     return(
         <main className="view-characters__container">
             <menu className="characters__actions">
-                <h2 className="h2__number-characters">Encontrado 20 heróis</h2>
+                <h2 className="h2__number-characters">
+                    {(search && search.length > 0) && formatNumberCharacters(search.length)}
+                    {(!search && props.characters) && formatNumberCharacters(props.characters.length)}
+                </h2>
                 <nav>
                     <section className="section__sort-by-name">
                         <Image 
@@ -49,7 +51,8 @@ const ViewCharacters = async() => {
                 </nav>
             </menu>
 
-            <Characters characters={response.results} />
+            {(search && search.length == 0) && <Characters characters={null} />}
+            {(search == null && !status) ? <Characters characters={props.characters} /> : <Characters characters={search} />}
         </main>
     )
 }
