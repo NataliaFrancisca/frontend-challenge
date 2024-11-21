@@ -17,9 +17,15 @@
   color: var(--grey-900)
 }
 
+.main__page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 footer{
   display: flex;
   height: 100px;
   background-color: var(--red-color);
+  margin-top: auto;
 }
