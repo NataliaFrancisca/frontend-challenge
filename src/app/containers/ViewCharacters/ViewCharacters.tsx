@@ -13,7 +13,7 @@ const ViewCharacters = (props: {characters: Array<TCharacterBasicInfo>}) => {
     if(favorites){
         return(
             <main className="view-characters__container">
-                <Menu characters={initial} />
+                <Menu />
                 <Characters characters={favorites} />
             </main>
         )
@@ -22,14 +22,14 @@ const ViewCharacters = (props: {characters: Array<TCharacterBasicInfo>}) => {
     if(search === null && !status){
         return(
             <main className="view-characters__container">
-                <Menu characters={props.characters} />
+                <Menu />
                 <Characters characters={initial} />
             </main>
         )
     }else{
         return(
             <main className="view-characters__container">
-                <Menu characters={props.characters} />
+                <Menu  />
                 <Characters characters={search} />
             </main>
         )
