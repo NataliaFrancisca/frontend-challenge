@@ -9,7 +9,7 @@ import { TCharacterBasicInfo } from "@/app/ts/types";
 const Characters = (props: {characters: Array<TCharacterBasicInfo> | null}) => {
 
     const { status } = useContext(SearchActionContext);
-
+    
     if(status){
         return(
             <main className="characters__grid full-width">
@@ -18,7 +18,7 @@ const Characters = (props: {characters: Array<TCharacterBasicInfo> | null}) => {
         )
     }
 
-    if(props.characters == null){
+    if(props.characters == null || props.characters.length === 0){
         return(
             <main className="characters__grid full-width">
                 <h2 className="h2__not-found">Nenhum herói foi encontrado</h2>

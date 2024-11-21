@@ -17,3 +17,9 @@
   color: var(--grey-900)
 }
 
+
+footer{
+  display: flex;
+  height: 100px;
+  background-color: var(--red-color);
+}

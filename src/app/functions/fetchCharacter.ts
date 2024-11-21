@@ -11,7 +11,6 @@ const BASE_FETCH = async(url: string) => {
         }
 
         const data = await response.json();
-        console.log("Resultado Requisição: ", data.data.results);
         return data.data;
     }catch(error){
         console.log("Erro no frontend: ", error);
