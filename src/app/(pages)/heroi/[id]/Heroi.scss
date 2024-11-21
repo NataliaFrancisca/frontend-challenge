@@ -4,7 +4,6 @@ main.main__hero{
     display: flex;
     flex-direction: column;
     position: relative;
-    gap: 60px;
 
     h1.h1__background-name{
         position: absolute;
@@ -16,6 +15,20 @@ main.main__hero{
         max-width: 80%;
         overflow: hidden; 
         white-space: nowrap;
+    }
+}
+
+menu.menu__search{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    gap: 100px;
+    padding-top: 40px;
+    z-index: 1;
+
+    img{
+        width: 200px;
+        object-fit: contain;
     }
 }
 
