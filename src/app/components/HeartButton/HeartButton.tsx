@@ -1,11 +1,11 @@
 'use client'
 import './HeartButton.scss';
-import { useCharacter } from '../Character/useCharacter';
 import { TCharacterBasicInfo } from '@/app/ts/types';
+import { useHeartButton } from './useHeartButton';
 
 const HeartButton = (props: {character: TCharacterBasicInfo}) => {
 
-    const { isFav, onToggleFavorite } = useCharacter(props.character);
+    const { isFav, onToggleFavorite } = useHeartButton(props.character);
     
     return(
         <label className="label__switch-favorite">
