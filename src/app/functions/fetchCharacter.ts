@@ -1,5 +1,5 @@
 const BASE_FETCH = async(url: string) => {
-    const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+    const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
     try{
         const response = await fetch(`${baseURL}${url}`, {
