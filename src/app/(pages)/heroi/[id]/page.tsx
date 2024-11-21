@@ -38,6 +38,10 @@ const Page = async({ params }: { params: { id: string } }) => {
         <main className="main__hero">
             <h1 className='h1__background-name'>{name}</h1>
 
+            <menu className='menu__search'>
+                <Image src={"/images/logo/logo.svg"} height={50} width={100} alt="logo marvel"/>
+            </menu>
+
             <header className='header__main-info'>
                 <section className='section__main-info'>
                     <div className='div__basic-info'>
