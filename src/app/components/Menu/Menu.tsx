@@ -1,16 +1,14 @@
 import Image from "next/image";
 import { useMenu } from "./useMenu";
-import { TCharacterBasicInfo } from "@/app/ts/types";
 
-const Menu = (props: {characters: Array<TCharacterBasicInfo>}) => {
+const Menu = () => {
 
-    const { search, actionShowSort, actionShowFavorites, formatNumberCharacters, onToggleFavorites, onToggleSort} = useMenu();
+    const { actionShowSort, actionShowFavorites, numberCharacters, formatNumberCharacters, onToggleFavorites, onToggleSort} = useMenu();
 
     return(
         <menu className="characters__actions">
             <h2 className="h2__number-characters">
-                {(search && search.length > 0) && formatNumberCharacters(search.length)}
-                {(!search && props.characters) && formatNumberCharacters(props.characters.length)}
+                {formatNumberCharacters(numberCharacters)}
             </h2>
             <nav>
                 <section className="section__sort-by-name">

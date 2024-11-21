@@ -6,12 +6,16 @@ import { useContext, useEffect, useState } from "react";
 export const useMenu = () => {
     const [actionShowFavorites, setActionShowFavorites] = useState(false);
     const [actionShowSort, setActionShowSort] = useState(true);
+    const [numberCharacters, setNumberCharacters] = useState(20);
 
     const { initial, search, favorites, setFavorites, setInitial, setSearch } = useContext(CharactersContext);
     const { status, setStatus } = useContext(SearchActionContext);
 
     const onToggleFavorites = () => {
         setActionShowFavorites(!actionShowFavorites);
+        if(favorites){
+            setNumberCharacters(favorites.length);
+        }
     }
 
     const onToggleSort = () => {
@@ -45,6 +49,7 @@ export const useMenu = () => {
                 );
                 
                 setFavorites(searchFavorites);
+                setNumberCharacters(favorites.length);
             }
         }
     }
@@ -59,6 +64,7 @@ export const useMenu = () => {
             }
 
             setStatus(false);
+            setNumberCharacters(favorites.length);
             return;
         }
 
@@ -79,8 +85,16 @@ export const useMenu = () => {
         if(search && actionShowFavorites){
             setSearhFavorites();
         }
+
+        if(search){
+            setNumberCharacters(search.length);
+        }
+
+        if(search == null){
+            setNumberCharacters(20);
+        }
     },[actionShowFavorites, search])
 
-    
-    return { search, status, actionShowSort, actionShowFavorites, onToggleFavorites, onToggleSort,  formatNumberCharacters }
+
+    return { search, status, actionShowSort, actionShowFavorites, numberCharacters, onToggleFavorites, onToggleSort,  formatNumberCharacters }
 };
