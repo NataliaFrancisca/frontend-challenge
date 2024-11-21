@@ -20,4 +20,4 @@ const BASE_FETCH = async(url: string) => {
 export const fetchAllCharacters = async () => await BASE_FETCH("/api/all-characters"); 
 export const fetchCharacterByName = async (name: string) => await BASE_FETCH(`/api/character-by-name?name=${encodeURIComponent(name)}`);
 export const fetchCharacterById = async (id: number) => await BASE_FETCH(`/api/character-by-id?id=${encodeURIComponent(id)}`)
-
+export const fetchCharacterComics = async(id: number) => await BASE_FETCH(`/api/character-comics?id=${encodeURIComponent(id)}`)

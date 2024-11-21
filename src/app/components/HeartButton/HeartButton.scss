@@ -1,0 +1,21 @@
+label.label__switch-favorite{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    input{
+        display: none;
+    }
+
+    span.icon{
+        content: url("/icon/heart/heart.svg");
+        width: 24px;
+        height: 24px;
+        display: flex;
+        cursor: pointer;
+    }
+
+    input:checked ~ span.icon{
+        content: url("/icon/heart/heart-fill.svg");
+    }
+}

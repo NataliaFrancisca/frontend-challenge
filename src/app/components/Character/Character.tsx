@@ -4,13 +4,14 @@ import Image from "next/image";
 import "./Character.scss";
 import { TCharacterBasicInfo } from "@/app/ts/types";
 import { useCharacter } from "./useCharacter";
+import Link from "next/link";
 
 const Character = (props: {character: TCharacterBasicInfo }) => {
     const { name, thumbnail } = props.character;
     const { isFav, onToggleFavorite } = useCharacter(props.character);
 
     return(
-        <article className="article__character">
+        <Link className="article__character" href={`/heroi/${props.character.id}`}>
             <Image 
                 width={1000}
                 height={1000}
@@ -31,7 +32,7 @@ const Character = (props: {character: TCharacterBasicInfo }) => {
                     <span className="icon" />
                 </label>
             </div>
-        </article>
+        </Link>
     )
 }
 

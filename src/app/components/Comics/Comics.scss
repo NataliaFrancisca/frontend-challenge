@@ -1,0 +1,31 @@
+section.section__comics{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 0 auto;
+    width: 84%;
+    z-index: 1;
+    
+    h1{
+        text-align: start;
+        font-size: 24px;
+    }
+
+    section.section__grid-comics{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 50px;
+
+        @media screen and (max-width: 1200px){
+            grid-template-columns: repeat(4, 1fr);
+        }
+    
+        @media screen and (max-width: 768px){
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        @media screen and (max-width: 576px){
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}

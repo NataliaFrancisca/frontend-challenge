@@ -6,7 +6,7 @@ const URL_BASE = 'https://gateway.marvel.com/v1/public';
 const MARVEL_PUBLIC_KEY = process.env.NEXT_PUBLIC_MARVEL_PUBLIC_KEY;
 const MARVEL_PRIVATE_KEY = process.env.NEXT_PUBLIC_MARVEL_PRIVATE_KEY;
 
-export async function httpRequest(url: string){
+export async function httpRequest(url: string, requestLimit?: number){
     try{
         const timestamp = new Date().getTime().toString();
         const hash = crypto
@@ -14,7 +14,7 @@ export async function httpRequest(url: string){
             .update(timestamp + MARVEL_PRIVATE_KEY + MARVEL_PUBLIC_KEY)
             .digest("hex");
 
-        const limit = 20;
+        const limit = requestLimit || 20;
         const offset = 0;
 
         const params = `ts=${timestamp}&apikey=${MARVEL_PUBLIC_KEY}&hash=${hash}&limit=${limit}&offset=${offset}`;

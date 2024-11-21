@@ -1,0 +1,125 @@
+main.main__hero{
+    background-color: var(--green-light-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 60px;
+
+    h1.h1__background-name{
+        position: absolute;
+        font-size: 500px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, .6);
+        z-index: 0;
+        left: 20%;
+        max-width: 80%;
+        overflow: hidden; 
+        white-space: nowrap;
+    }
+}
+
+header.header__main-info{
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 24% 68%;
+    justify-content: space-between;
+    width: 84%;
+    margin: 0 auto;
+    padding-top: 100px;
+
+    @media screen and (max-width: 1200px){
+        grid-template-columns: 34% 58%;
+    }
+
+    @media screen and (max-width: 992px){
+        grid-template-columns: 44% 58%;
+    }
+
+    @media screen and (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    section.section__main-info{
+        width: 100%;
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+
+        div.div__basic-info{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+            h1{
+                font-size: 40px;
+                text-transform: uppercase;
+            }
+        }
+
+        p.p__description{
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            color: var(--grey-900);
+        }
+
+        div.div__medias-info{
+            display: flex;
+            gap: 100px;
+
+            article.article__media-info{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h2{
+                    font-size: 14px;
+                    font-weight: 600;
+                }
+
+                span{
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        div.div__media-rating{
+            display: flex;
+            align-items: self-start;
+            gap: 10px;
+
+            h2{
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            span{
+                gap: 10px;
+            }  
+        }
+
+        div.div__media-last-release{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            h2{
+                font-size: 14px;
+                font-weight: 600; 
+            }
+
+            span{
+                font-size: 14px;
+                font-weight: 500;
+                text-transform: lowercase;
+            }
+        }
+    }
+}
