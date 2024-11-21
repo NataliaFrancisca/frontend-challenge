@@ -20,11 +20,29 @@ article.article__character{
             font-size: 18px;
         }
 
-        img{
-            width: 18px;
-            height: 18px;
+        label.label__switch-favorite{
+            display: flex;
+            align-items: center;
+            gap: 14px;
+
+            input{
+                display: none;
+            }
+
+            span.icon{
+                content: url("/icon/heart/heart.svg");
+                width: 24px;
+                height: 24px;
+                display: flex;
+                cursor: pointer;
+            }
+    
+            input:checked ~ span.icon{
+                content: url("/icon/heart/heart-fill.svg");
+            }
         }
     }
+    
 
     @media screen and (max-width: 576px){
         grid-template-rows: 300px 100px;
