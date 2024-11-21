@@ -1,8 +1,9 @@
-article.article__character{
+a.article__character{
     display: grid;
     grid-template-rows: 300px 70px;
     width: 100%;
     gap: 10px;
+    text-decoration: none;
 
     img.img__character{
         width: 100%;
