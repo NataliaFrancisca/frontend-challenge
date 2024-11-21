@@ -10,10 +10,10 @@ import { fetchCharacterById, fetchCharacterComics } from "@/app/functions/fetchC
 import { TCharacterFullInfo, TComicsInfo } from '@/app/ts/types';
 import { getDateFormated } from '@/app/utils/formatDate';
 
-const Page = async({ params }: { params: { id: string } }) => {
-
-    const response = await fetchCharacterById(+params.id);
-    const comicsResponse = await fetchCharacterComics(+params.id);
+const Page = async ({ params }: { params: Promise<{id: string}> }) => {
+    const id = (await params).id;
+    const response = await fetchCharacterById(+id);
+    const comicsResponse = await fetchCharacterComics(+id);
 
     if(!response.results && !comicsResponse.results){
         <main className="main__hero">
