@@ -1,8 +1,8 @@
 # Marvel Search Hero
 
-Marvel Search Hero é uma página onde permite o usuário a fazer uma pesquisa sobre os heróis da Marvel, é também possível selecionar 5 heróis como favorito. A página contém uma página dedicada a cada herói.
+Marvel Search Hero é uma aplicação web que permite aos usuários pesquisar por heróis da Marvel, visualizar informações detalhadas sobre eles e selecionar até 5 heróis como favoritos. Cada herói possui uma página dedicada com informações específicas.
 
-⭐ Este projeto foi desenvolvido como parte de um processo seletivo para a posição de Programador Júnir.
+⭐ Este projeto foi desenvolvido como parte de um processo seletivo para a posição de Programador Júnior.
 
 ## Stack:
 - Next.js
@@ -14,10 +14,10 @@ Marvel Search Hero é uma página onde permite o usuário a fazer uma pesquisa s
 ## Pendências:
 - [ ] Barra de pesquisa da página de herói, não consegui desenvolver
 
-- ## Melhorias:
-- [ ] Transição entre as páginas, como um loader ou efeitos de transição.
-- [ ] Organização dos arquivos e códigos
-- [ ] Reaproveitar códigos repetitivos e criar componentes.
+## Melhorias:
+- Adicionar um loader ou efeitos de transição entre páginas para melhorar a experiência do usuário.
+- Melhorar a organização dos arquivos e códigos.
+- Reaproveitar códigos repetitivos e criar componentes reutilizáveis.
 
 ## Autora:
 - [@nataliaFrancisca](https://www.github.com/NataliaFrancisca)
