@@ -73,7 +73,10 @@ export const useMenu = () => {
     }
 
     const formatNumberCharacters = (size: number) => {
-        return  size > 1 ? `Encontrado ${size} heróis` : "Encontrado 1 herói";
+        if(size == 0 || size > 2){
+            return `Encontrado ${size} heróis`
+        }
+        return "Encontrado 1 herói";
     }
 
     useEffect(() => {
